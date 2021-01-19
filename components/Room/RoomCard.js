@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  Dimensions,
-  ScrollView,
-} from "react-native";
+import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
 import Evaluation from "../Share/Evaluation";
 import SwiperFlatList from "react-native-swiper-flatlist";
 
@@ -127,8 +120,6 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     alignItems: "center",
-    // borderWidth: 1,
-    // borderColor: "white",
   },
   info: {
     flex: 1,

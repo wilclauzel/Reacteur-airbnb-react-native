@@ -18,7 +18,6 @@ import {
 } from "react-native";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 export default function SignUpScreen({ navigation, setIdToken }) {
   const [email, setEmail] = useState("");
@@ -66,7 +65,7 @@ export default function SignUpScreen({ navigation, setIdToken }) {
           },
         }
       );
-      setIdToken(response.data.id, response.data.token);
+      setIdToken(response.data._id, response.data.token);
     } catch (error) {
       console.log(error);
       console.log(error.response);

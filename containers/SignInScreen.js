@@ -24,24 +24,12 @@ export default function SignInScreen({ navigation, setIdToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [warning, setWarning] = useState("");
-  // const [userLogin, setUserLogin] = useState(null);
 
   useEffect(() => {
     if (warning && email && password) {
       setWarning("");
     }
   }, [warning, email, password]);
-
-  // useEffect(() => {
-  //   console.log("signin go", userLogin);
-  //   if (userLogin && userLogin.id && userLogin.token) {
-  //     console.log("signin call setIdToken");
-  //     setIdToken(userLogin.id, userLogin.token);
-  //   }
-  // }, [userLogin]);
-  // useEffect(() => {
-
-  // }, [userLogin]);
 
   const handleSubmit = async () => {
     if (!email || !password) {
@@ -58,8 +46,6 @@ export default function SignInScreen({ navigation, setIdToken }) {
           },
         }
       );
-      // console.log("william change login", response.data);
-      // setUserLogin({ id: response.data.id, token: response.data.token });
       setIdToken(response.data.id, response.data.token);
     } catch (error) {
       console.log(error);
@@ -153,9 +139,6 @@ const styles = StyleSheet.create({
     height: windowHeight / 5,
     paddingHorizontal: 20,
     marginVertical: 40,
-    // flex: 1,
-    // borderColor: "red",
-    // borderWidth: 2,
   },
   sectionCenter: {
     justifyContent: "center",

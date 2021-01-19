@@ -3,11 +3,8 @@ import axios from "axios";
 import Constants from "expo-constants";
 import {
   ActivityIndicator,
-  Button,
-  Text,
   View,
   SafeAreaView,
-  ScrollView,
   StyleSheet,
   Platform,
   FlatList,
@@ -21,7 +18,6 @@ const handleLoadRooms = async (setRooms, setIsLoading) => {
     const response = await axios.get(
       "https://express-airbnb-api.herokuapp.com/rooms"
     );
-    // setTimeout(() => {}, 5000);
     setRooms(response.data);
     setIsLoading(false);
   } catch (error) {
@@ -54,7 +50,7 @@ export default function HomeScreen({ navigation }) {
             }
             data={rooms}
             keyExtractor={(item) => item._id}
-            renderItem={({ item, index, separators }) => (
+            renderItem={({ item, separators }) => (
               <TouchableHighlight
                 key={item.key}
                 onPress={() => {
@@ -90,7 +86,7 @@ const styles = StyleSheet.create({
   page: {
     marginTop: 10,
     width: windowWidth - 40,
-    // Ces 2 attributs pour le scroll de la Flalist
+    // Necessary for the Flalist scroll
     flex: 1,
     marginBottom: 5,
   },

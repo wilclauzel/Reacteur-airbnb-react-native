@@ -22,7 +22,6 @@ const handleLoadRoom = async (id, setIsLoading, setRoom) => {
     const response = await axios.get(
       "https://express-airbnb-api.herokuapp.com/rooms/" + id
     );
-    // setTimeout(() => {}, 10000);
     setRoom(response.data);
     setIsLoading(false);
   } catch (error) {
@@ -71,12 +70,12 @@ export default function RoomScreen({ route }) {
               {allDescription ? (
                 <View style={styles.row}>
                   <Text style={styles.more}>Show less</Text>
-                  <Ionicons name="md-arrow-dropup" size={24} color="grey" />
+                  <Ionicons name="caret-up-outline" size={24} color="grey" />
                 </View>
               ) : (
                 <View style={styles.row}>
                   <Text style={styles.more}>Show more</Text>
-                  <Ionicons name="md-arrow-dropdown" size={24} color="grey" />
+                  <Ionicons name="caret-down-outline" size={24} color="grey" />
                 </View>
               )}
             </TouchableHighlight>
@@ -118,7 +117,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   page: {
-    // marginTop: 0,
     width: windowWidth,
   },
   description: {

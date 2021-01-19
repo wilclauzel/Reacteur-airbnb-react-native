@@ -34,7 +34,6 @@ const Map = ({
                   longitude: marker.longitude,
                 }}
                 title={marker.title}
-                // desription={marker.description}
               />
             );
           })}

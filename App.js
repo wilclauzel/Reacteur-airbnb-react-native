@@ -3,6 +3,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+/* Icons */
 import {
   AntDesign,
   Ionicons,
@@ -15,7 +17,6 @@ import RoomScreen from "./containers/RoomScreen";
 import ProfileScreen from "./containers/ProfileScreen";
 import SignInScreen from "./containers/SignInScreen";
 import SignUpScreen from "./containers/SignUpScreen";
-import SettingsScreen from "./containers/SettingsScreen";
 import AroundMeScreen from "./containers/AroundMeScreen";
 
 /* Components */
@@ -26,7 +27,7 @@ const Stack = createStackNavigator();
 
 const updateAsyncStorage = async (userId, token) => {
   try {
-    if (token) {
+    if (userId && token) {
       AsyncStorage.setItem("userId", userId);
       AsyncStorage.setItem("userToken", token);
     } else {
@@ -116,28 +117,10 @@ export default function App() {
                 >
                   {() => (
                     <Stack.Navigator headerMode="none">
-                      <Stack.Screen
-                        name="Home"
-                        options={
-                          {
-                            // headerMode: "none",
-                            // title: "My App",
-                            // headerStyle: { backgroundColor: "green" },
-                            // headerTitleStyle: { color: "black" },
-                            // header: () => null,
-                          }
-                        }
-                      >
+                      <Stack.Screen name="Home">
                         {(props) => <HomeScreen {...props} />}
                       </Stack.Screen>
-                      <Stack.Screen
-                        name="Room"
-                        options={
-                          {
-                            // title: "My  prefered Room",
-                          }
-                        }
-                      >
+                      <Stack.Screen name="Room">
                         {(props) => <RoomScreen {...props} />}
                       </Stack.Screen>
                     </Stack.Navigator>
@@ -146,7 +129,6 @@ export default function App() {
                 <Tab.Screen
                   name="AroundMe"
                   options={{
-                    // tabBarLabel: "Around me",
                     tabBarIcon: ({ color, size }) => (
                       <MaterialCommunityIcons
                         name="map-marker-outline"
@@ -158,14 +140,7 @@ export default function App() {
                 >
                   {() => (
                     <Stack.Navigator headerMode="none">
-                      <Stack.Screen
-                        name="AroundMe"
-                        options={
-                          {
-                            //title: "AroundMe", tabBarLabel: "AroundMe"
-                          }
-                        }
-                      >
+                      <Stack.Screen name="AroundMe">
                         {(props) => <AroundMeScreen {...props} />}
                       </Stack.Screen>
                     </Stack.Navigator>

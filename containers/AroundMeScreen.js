@@ -4,7 +4,6 @@ import {
   ActivityIndicator,
   SafeAreaView,
   StyleSheet,
-  Text,
   View,
   Dimensions,
 } from "react-native";
@@ -46,7 +45,6 @@ const handleLoadData = async (setIsLoading, setInitialRegion, setMarkers) => {
       "https://express-airbnb-api.herokuapp.com/rooms/around" + params
     );
     if (params && response.data?.length === 0) {
-      //   initialRegion = null; Keep the location even if far away
       response = await axios.get(
         "https://express-airbnb-api.herokuapp.com/rooms/around"
       );

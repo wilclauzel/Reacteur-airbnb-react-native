@@ -39,6 +39,7 @@ const handleLoadData = async (
           },
         }
       );
+      console.log(response.data);
       setEmail(response.data.email);
       setUsername(response.data.username);
       setDescription(response.data.description);
@@ -77,16 +78,9 @@ const handlePickPhoto = async (setImageUri, setUpdatedImage) => {
 const handleTakePhoto = async (setImageUri, setUpdatedImage) => {
   //Authorization for camera access AND image gallery access
   const cameraPerm = await ImagePicker.requestCameraPermissionsAsync();
-  // const cameraRollPerm = await ImagePicker.requestCameraRollPermissionsAsync();
 
   // only if user allows permission to camera AND image gallery access
-  if (
-    cameraPerm &&
-    cameraPerm.status === "granted"
-    // &&
-    // cameraRollPerm &&
-    // cameraRollPerm.status === "granted"
-  ) {
+  if (cameraPerm && cameraPerm.status === "granted") {
     const pickerResult = await ImagePicker.launchCameraAsync({
       allowsEditing: true,
       aspect: [1, 1],
@@ -212,7 +206,7 @@ export default function ProfileScreen({ userId, userToken, setIdToken }) {
 
   const handleSubmit = async () => {
     if (!updatedImage && !updatedInfo && !updatedEmail && !updatedName) {
-      Alert.alert("Aucune modification à mettre à jour !");
+      Alert.alert("None modification to update !");
       return;
     }
     if (!email || !description || !username) {
