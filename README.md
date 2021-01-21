@@ -71,4 +71,4 @@ Project is _finished_.
 
 ## Inspiration
 
-This projet is kind of simplified replica of [official airbnb website](https://www.airbnb.fr//).
+This projet is kind of simplified replica of [official airbnb website](https://www.airbnb.fr/).
