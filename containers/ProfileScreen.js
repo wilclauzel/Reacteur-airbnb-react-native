@@ -39,7 +39,6 @@ const handleLoadData = async (
           },
         }
       );
-      console.log(response.data);
       setEmail(response.data.email);
       setUsername(response.data.username);
       setDescription(response.data.description);
