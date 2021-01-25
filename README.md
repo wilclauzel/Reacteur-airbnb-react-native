@@ -15,9 +15,11 @@
 
 ## General info
 
-First project of Le Reacteur training on mobile application in order to put into practice our knowledge in Native React.
+First project of [Le Reacteur](https://www.lereacteur.io/) training on mobile application in order to put into practice our knowledge in Native React.
 
 This project is based on a Le Reacteur training 's server application which managed offers and users authentication. This part is not included in this exercice.
+
+This project, with a pedagogical aim, should allow us to put forward our knowledge to employers.
 
 ## Screenshots
 
