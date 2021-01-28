@@ -74,3 +74,11 @@ Project is _finished_.
 ## Inspiration
 
 This projet is kind of simplified replica of [official airbnb website](https://www.airbnb.fr/).
+
+## 📈 Stats
+
+<br>
+<br> 
+<img align="center" src="https://wilclauzel-activitycounter.herokuapp.com/counter/GitHub/AirnbnM?kind=SVG"/>
+<br>
+<br>
