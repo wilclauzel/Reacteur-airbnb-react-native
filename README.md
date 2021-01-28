@@ -79,6 +79,6 @@ This projet is kind of simplified replica of [official airbnb website](https://w
 
 <br>
 <br> 
-<img align="center" src="https://wilclauzel-activitycounter.herokuapp.com/counter/GitHub/AirnbnM?kind=SVG"/>
+<img align="center" src="https://wilclauzel-activitycounter.herokuapp.com/counter/GitHub/AirbnbM?kind=SVG"/>
 <br>
 <br>
